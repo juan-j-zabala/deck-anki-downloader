@@ -17,7 +17,7 @@ let json2csvCallback = function(err, csv) {
 export const ConverterFile = (obj) => {
 
   const csvdata = converter.json2csv(obj, json2csvCallback, {
-    prependHeader: false      // removes the generated header of "value1,value2,value3,value4" (in case you don't want it)
+    prependHeader: true      // removes the generated header of "value1,value2,value3,value4" (in case you don't want it)
   });
 
   fs.writeFile('deck.csv', csvdata, 'utf8', function(err) {
